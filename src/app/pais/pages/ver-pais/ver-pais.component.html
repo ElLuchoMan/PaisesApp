@@ -1,1 +1,52 @@
-<p>ver-pais works!</p>
+<div *ngIf="!pais;else divPais" class="alert alert-info">
+    Espere por favor...
+</div>
+<ng-template #divPais>
+    <div class="row">
+        <div class="col-12">
+            <h1>País: <small>{{pais.name}}</small></h1>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h3>Bandera</h3>
+                <img class="img-thumbnail" [src]="pais.flag">
+            </div>
+            <div class="col-8">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong></strong> {{pais.altSpellings}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Capital:</strong> {{pais.capital}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Población:</strong> {{pais.population | number}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Area:</strong> {{pais.area | number}} <strong>Coordenadas:</strong> {{pais.latlng}}
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <h3>Traducciones:</h3>
+        <div class="row">
+            <div class="col">
+                <span class="badge bg-primary mr-1">{{pais.translations.br}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.de}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.es}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.fa}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.fr}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.hr}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.it}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.ja}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.nl}}</span>
+                <span class="badge bg-primary mr-1">{{pais.translations.pt}}</span>
+            </div>
+        </div>
+        <h3>Propiedades que contiene el json: </h3>
+        <pre class="mt-5">
+            {{pais |json}}
+        </pre>
+    </div>
+</ng-template>
