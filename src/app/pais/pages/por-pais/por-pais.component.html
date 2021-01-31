@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
     <div class="col">
-       <app-pais-input (onEnter)="buscar($event)"></app-pais-input>
+       <app-pais-input (onEnter)="buscar($event)" placeholder="Buscar por País..."(onDebounce)="sugerencias($event)"></app-pais-input>
     </div>
 </div>
 <hr>

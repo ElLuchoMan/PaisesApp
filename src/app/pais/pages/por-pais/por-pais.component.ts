@@ -11,23 +11,26 @@ import { Pais } from '../../interfaces/pais.interface';
 export class PorPaisComponent {
 
   termino: string = '';
-  hayError:boolean=false;
-  paises:Pais[]=[];
+  hayError: boolean = false;
+  paises: Pais[] = [];
   constructor(private paisService: PaisService) { }
 
-  buscar(termino:string) {
-    this.hayError=false;
-    this.termino=termino;
+  buscar(termino: string) {
+    this.hayError = false;
+    this.termino = termino;
     this.paisService.buscarPais(this.termino)
-    .subscribe((paises)=>{
-      console.log(paises);
-      this.paises=paises;
-      
-    }, (err)=>{
-     this.hayError=true;
-     this.paises=[];
-    }
-    );
+      .subscribe((paises) => {
+        console.log(paises);
+        this.paises = paises;
 
+      }, (err) => {
+        this.hayError = true;
+        this.paises = [];
+      }
+      );
+  }
+  sugerencias(termino: string) {
+    this.hayError = false;
+    this.termino = '';
   }
 }
