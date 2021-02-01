@@ -1,3 +1,4 @@
+<div class="animate__animated animate__fadeIn">
 <h2>Por País</h2>
 <hr>
 <div class="row">
@@ -6,10 +7,11 @@
     </div>
 </div>
 <hr>
+</div>
 <div *ngIf="hayError" class="alert alert-danger">
     No hay ningún país con el término "{{termino}}".
 </div>
-<div *ngIf="paises.length>0" class="row">
+<div *ngIf="paises.length>0" class="row animate__animated animate__fadeIn">
     <div class="col">
 <app-pais-tabla [paises]="paises"></app-pais-tabla>
      

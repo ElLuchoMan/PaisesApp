@@ -1,3 +1,4 @@
+<div class="animate__animated animate__fadeIn">
 <h3>Buscar por Región <small>{{ regionActiva |titlecase}}</small></h3>
 <hr>
 <h5>Seleccione la región</h5>
@@ -8,10 +9,11 @@
             [class]="getClaseCSS(region)">
             {{region | titlecase}}
         </button>
+    </div>
         <div *ngIf="hayError" class="alert alert-danger">
             No hay ningún país con el término "{{regionActiva}}".
         </div>
-        <div *ngIf="paises.length>0" class="row">
+        <div *ngIf="paises.length>0" class="row animate__animated animate__fadeIn">
             <div class="col">
         <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </div>
